@@ -15,7 +15,7 @@ void setup() {
 void draw() {
   background(0);
 
-  // Aumentamos la opacidad del texto suavemente
+  // opacidad del texto
   if (textoAlpha < 255) {
     textoAlpha += 2;
   }
@@ -41,7 +41,7 @@ void draw() {
       text("El juego usa un diseño en blanco y negro", width/2, height - 100);
       text("que potencia la tensión y el suspenso.", width/2, height - 75);
 
-      // Botón
+      // boton
       fill(255);
       rectMode(CORNER);
       rect(width/2 - 50, height - 60, 100, 40);
@@ -51,14 +51,14 @@ void draw() {
       break;
   }
 
-  // Cambio automático de pantalla cada 5 segundos (300 frames)
+  // cambio automático de pantalla cada5 segundos (300 frames)
   if (frameCount - tiempoPantalla > 300) {
     pantalla++;
     tiempoPantalla = frameCount;
     textoAlpha = 0;  // reinicia animación del texto
   }
 
-  // Volver a la primera pantalla si pasa la última
+  // volver a la primera pantalla si pasa la última
   if (pantalla > 3) {
     pantalla = 1;
     textoAlpha = 0;
